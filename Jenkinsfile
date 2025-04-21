@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building project with version: ${NEW_VERSION}"
-                sh "nvm install"
+                //sh "nvm install"
             }
         }
         stage('Test') {
