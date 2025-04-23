@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building version ${env.NEW_VERSION} on branch ${params.BRANCH_NAME}"
-                bat 'mvn clean package -Dversion=%NEW_VERSION%'
+                //bat 'mvn clean package -Dversion=%NEW_VERSION%'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 echo "Running unit tests in ${params.BUILD_ENV} environment"
-                bat 'mvn test'
+                //bat 'mvn test'
             }
         }
 
@@ -49,7 +49,7 @@ pipeline {
             }
             steps {
                 echo "Deploying to ${params.BUILD_ENV} environment from branch ${params.BRANCH_NAME}"
-                bat 'echo Deploying app...'
+                //bat 'echo Deploying app...'
             }
         }
     }
@@ -57,7 +57,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up workspace...'
-            deleteDir()
+            //deleteDir()
         }
         success {
             echo 'Pipeline succeeded.'
